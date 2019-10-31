@@ -1,13 +1,17 @@
-version: 2
+version: 2.1
 jobs:
   build:
     docker:
       - image: ubuntu:18.04
     steps:
-      - run: echo "Testing build Circle CI 2.0"
-      - slack/status:
-          fail_only: 'true'
-          only_for_branch: master
-          webhook: "https://hooks.slack.com/services/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"
+      - slack/notify:
+          color: '#42e2f4'
+          message: testing building Circle CI
+          webhook: https://hooks.slack.com/services/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
 orbs:
-  slack: circleci/slack@1.0.0
+  slack: circleci/slack@x.y.z
+version: 2.1
+workflows:
+  your-workflow:
+    jobs:
+      - build
