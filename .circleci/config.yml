@@ -11,4 +11,3 @@ jobs:
           webhook: "https://hooks.slack.com/services/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"
 orbs:
   slack: circleci/slack@1.0.0
-version: 2
