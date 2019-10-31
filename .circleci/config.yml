@@ -10,7 +10,6 @@ jobs:
           webhook: https://hooks.slack.com/services/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
 orbs:
   slack: circleci/slack@x.y.z
-version: 2.1
 workflows:
   your-workflow:
     jobs:
