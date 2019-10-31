@@ -4,17 +4,11 @@ jobs:
     docker:
       - image: ubuntu:18.04
     steps:
-      - checkout
-      - run: echo "Building docker"
-  test:
-    docker:
-      - image: ubuntu:18.04
-    steps:
-      - checkout
-      - run: echo "Testing docker"
-workflows:
-  version: 2
-  build_and_test:
-    jobs:
-      - build
-      - test
+      - run: echo "Testing build Circle CI 2.0"
+      - slack/status:
+          fail_only: 'true'
+          only_for_branch: master
+          webhook: "https://hooks.slack.com/services/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"
+orbs:
+  slack: circleci/slack@1.0.0
+version: 2
